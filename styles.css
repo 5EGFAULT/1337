@@ -37,6 +37,7 @@ h1 {
   aspect-ratio: 16/4;
   display: flex;
   flex-wrap: wrap;
+  gap: 30px;
 }
 .started {
   display: none;
