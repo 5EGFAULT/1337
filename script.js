@@ -1,6 +1,6 @@
 
-const countToDate = new Date().setSeconds(new Date().getSeconds() + 3)
-//const countToDate = new Date("Mon Oct 10 2022 16:00:00 GMT+0100 (GMT+01:00)")
+//const countToDate = new Date().setSeconds(new Date().getSeconds() + 3)
+const countToDate = new Date("Mon Oct 10 2022 16:00:00 GMT+0100 (GMT+01:00)")
 let previousTimeBetweenDates
 setInterval(() => {
 	const currentDate = new Date()
