@@ -1,6 +1,6 @@
 @font-face {
   font-family: Parisienne;
-  src: url("Parisienne-Regular.ttf");
+  src: url("./assets/Parisienne-Regular.ttf");
 }
 
 html,
@@ -19,9 +19,10 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-image: url("bg.png");
+  background-image: url("./assets/new-bg.png");
   background-position: center;
   background-size: cover;
+  overflow: hidden;
 }
 
 h1 {
@@ -145,4 +146,54 @@ body {
 
 .segment-title {
   font-size: 1rem;
+}
+
+.leaf {
+  position: absolute;
+  top: 0;
+  max-width: 2rem;
+}
+
+.leaf1 {
+}
+/*
+* docs http://thenewcode.com/604/Seasonal-CSS-Falling-Leaves-In-CSS-3D-With-Realistic-Shadows
+*/
+.falling {
+  /*animation: falling 6s ease-in-out infinite;*/
+
+  /*transition: 5s;*/
+  top: 500px;
+  transform-origin: 0px -1200px 0px;
+  animation-name: fall, sway;
+  animation-duration: 7s, 8s;
+  animation-fill-mode: both;
+  animation-timing-function: linear, ease-in-out;
+}
+@keyframes sway {
+  0% {
+    transform: rotateZ(-15deg) rotateX(55deg);
+  }
+  30% {
+    transform: rotateZ(20deg) rotateX(60deg);
+    animation-timing-function: ease-in-out;
+  }
+  60% {
+    transform: rotateZ(-20deg) rotateX(55deg);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: rotateZ(0deg) rotateX(58deg);
+    animation-timing-function: cubic-bezier(0.99, 0, 0.89, 0.435);
+  }
+}
+@keyframes fall {
+  60% {
+    filter: drop-shadow(0px 60px 40px rgba(0, 0, 0, 0));
+  }
+
+  100% {
+    margin-top: 500px;
+    filter: drop-shadow(0px 5px 8px rgba(0, 0, 0, 0.6));
+  }
 }
